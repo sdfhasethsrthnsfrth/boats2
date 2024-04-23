@@ -4,7 +4,7 @@ import time
 
 port = "/dev/ttyS0" #should be correct serial port I hopes
 baudrate = 115200
-time_out = 5 #timeout for listening in ms, doesn't do much tbh
+time_out = 5 #timeout for listening in s
 ser = serial.Serial(port, baudrate, timeout=1) #keep timeout for sending low
 ser.flushInput()
 ser.flushOutput()
@@ -22,23 +22,28 @@ def wait_response(serial_port, time_out):
 	return response
 
 def send_command(command):
-    time.sleep(0.1)
+	time.sleep(0.1)
     ser.write(("AT+" + command + "\r\n").encode())
-    
+
+def send_message(confirm, nbtrials, message):
+    time.sleep(0.1)
+	hex_msg = encode_msg(message)
+	hex_msg_length = len(hex_msg)
+    ser.write("AT+DTRX="+"," + int(confirm) + "," + int(nbtrials) + "," + hex_msg_length + ","  + hex_msg)
+
+def encode_msg(message): #convert messages from String to Hex
+    byte_array = bytearray(message, 'utf-8')
+    hex_string = ''.join(format(byte, '02x') for byte in byte_array)
+    return hex_string
+
 #send a testframe of data
-send_command("DTRX=0,0,20,AF123AF123AF123AF123")
+send_message(0,0,kiekeboe)
 print(wait_response(ser, 1))
 
 #this should return:
 #"OK+SEND:0A"
 #"OK+SENT:08"
 
-send_command("DRX?")
-try:
-    while True:
-        if ser.in_waiting > 0:
-            message = ser.readline().decode()
-            print("message ", message)
 except KeyboardInterrupt:
     print("bye bye")
 ser.close()
