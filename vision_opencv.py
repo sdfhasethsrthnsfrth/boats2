@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 import cv2 as cv
 import numpy as np
+from send_data import *
 
 cam_port = 0
 video = VideoCapture(cam_port)
@@ -27,12 +28,13 @@ frames_to_skip = frame_rate * 5 #skip 5 seconds of frames before reading a new o
 while True:
 	ret, frame = video.read()
   if not ret: #check frame was read correctly
-    print("Error: Couldn't capture frame")
-    break
-  frame_counter += 1
+		print("Error: Couldn't capture frame")
+    	break
+	frame_counter += 1
  if frame_counter >= frames_to_skip:
    #do machine vision
    #code
+	 
    frame_counter = 0  # Reset frame counter after displaying the frame
  
   
