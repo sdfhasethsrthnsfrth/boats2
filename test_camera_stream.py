@@ -5,6 +5,7 @@ from ultralytics import YOLO
 import numpy as np
 from send_data import *
 from random_folder_generator import *
+import time
 
 #camera configs
 camera = Picamera2()
@@ -17,6 +18,27 @@ camera.start() #initialize camera
 
 #import the model
 model=YOLO("best_cross_val.pt")
+"""
+def wait_response(serial_port, time_out):
+    response=""
+    start = time.time()*1000
+    while True:
+        current_millis = time.time()*1000
+        if serial_port.in_waiting or (current_millis - start) < time_out:
+            msg = serial_port.readline().decode()
+            response += msg
+        else:
+            break
+    return response
+"""
+#create pause function to minimize double detects, don't use sleep
+def pause(timeout):
+    start = time.time()
+    while (start - now ) < timeout:
+        now = time.time()
+        pass
+
+
 
 #make a counter function from the results of the model
 def count_values(arr):
@@ -47,11 +69,11 @@ while True:
                 counter += 1
                 class_ids = np.append(class_ids,int(boxes.cls)) #copy the boxes.cls to the class_ids array
                 print(count_values(class_ids)) #check message that will be sent over LoRaWAN
-                ser = open_serial()
-                send_message(ser, 0,0, count_values(class_ids))
+                ser = open_serial() #make sure serial port is opened
+                send_message(ser, 0,0, count_values(class_ids)) #send LoRaWAN message
                 print(wait_response(ser, 1))
                 pause(15) #pause the entire loop for 15s
-                
+                time.sleep(15) #freeze entire code for 15s 
         frame_ = results[0].plot() #load annotated picture (with bounding boxes, class names and confidence scores)
         cv2.imshow('frame', frame_) #show annotated picture
         frame_counter = 0 #reset the frame_counter
