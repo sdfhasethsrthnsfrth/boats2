@@ -7,13 +7,8 @@ def get_random_bytes(num_bytes):
 
 #function for creating a directory on an external hard drive
 def create_directory(mount_point, directory_name):
-    try:
-        directory_path = os.path.join(mount_point, directory_name)
-        os.makedirs(directory_path)
-        return True
-    except OSError as e:
-        print("something went wrong, random directory wasn't created")
-        return False
+    directory_path = os.path.join(mount_point, directory_name)
+    os.makedirs(directory_path)
     
 """example for testing
 mount_point = "/mnt/mooring"    
