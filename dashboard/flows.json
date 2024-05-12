@@ -1,0 +1,1060 @@
+[
+    {
+        "id": "56bf86fa1e00f568",
+        "type": "tab",
+        "label": "Read MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0a502c0890c0a815",
+        "type": "tab",
+        "label": "global variables",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d5259560518e1874",
+        "type": "tab",
+        "label": "resets",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bc755da1433332fd",
+        "type": "tab",
+        "label": "log data",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cac50668a473cfc4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt://iot.research.hamk.fi",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "5b6b0e3c78adbd79",
+        "type": "ui_tab",
+        "name": "Valkeakoski",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "da60e7a3da1bd50a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "9bd7c73e0058dabf",
+        "type": "ui_group",
+        "name": "Boats",
+        "tab": "5b6b0e3c78adbd79",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "94cb9d4b04c73554",
+        "type": "mqtt in",
+        "z": "56bf86fa1e00f568",
+        "name": "",
+        "topic": "HAMK/boat/counter",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cac50668a473cfc4",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "7b2bb3fe6fd80fa3",
+                "4e952f48bf3ad92c"
+            ]
+        ]
+    },
+    {
+        "id": "7b2bb3fe6fd80fa3",
+        "type": "debug",
+        "z": "56bf86fa1e00f568",
+        "name": "raw MQTT message",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cdd8194d85267aa5",
+        "type": "debug",
+        "z": "56bf86fa1e00f568",
+        "name": "translated MQTT message",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "4e952f48bf3ad92c",
+        "type": "function",
+        "z": "56bf86fa1e00f568",
+        "name": "translator",
+        "func": "var hexString = msg.payload;\nvar asciiString = \"\";\n\nfor(var i = 0; i<hexString.length; i+=2){\n    asciiString += String.fromCharCode(parseInt(hexString.substr(i,2),16));\n}\nmsg.payload = asciiString;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "cdd8194d85267aa5",
+                "64c5148669c67edc"
+            ]
+        ],
+        "info": "function to translate hexadecimal (from LoRaWAN messages) to ascii string"
+    },
+    {
+        "id": "64c5148669c67edc",
+        "type": "function",
+        "z": "56bf86fa1e00f568",
+        "name": "counter",
+        "func": "//get global vars\nvar counterS = global.get(\"counterS\");\nvar counterM = global.get(\"counterM\");\nvar counterP = global.get(\"counterP\");\nvar counterStot = global.get(\"counterStot\");\nvar counterMtot = global.get(\"counterMtot\");\nvar counterPtot = global.get(\"counterPtot\");\nvar counterTot = global.get(\"counterTot\");\nvar counterDay = global.get(\"counterDay\");\nvar heartbeat = global.get(\"heartbeat\");\n\n//example input : \"S5,M0,P0\" / \"00\"\nvar data = msg.payload;\nnode.warn(\"my var data = \" + data);\nif(data.length > 2){ //ignore the heartbeat signal\n    var values = data.split(','); //split string on comma's\n    node.warn(\"my var values = \" + values);\n    //example values : [\"S5\", \"M0\", \"P0\"]\n    //update individual counters\n    counterS += parseInt(values[0].substring(1));\n    counterStot += parseInt(values[0].substring(1));\n    global.set(\"counterS\", counterS);\n    global.set(\"counterStot\", counterStot);\n\n    counterM += parseInt(values[1].substring(1));\n    counterMtot += parseInt(values[1].substring(1));\n    global.set(\"counterM\", counterM);\n    global.set(\"counterMtot\", counterMtot);\n\n    counterP += parseInt(values[2].substring(1));\n    counterPtot += parseInt(values[2].substring(1));\n    global.set(\"counterP\", counterP);\n    global.set(\"counterPtot\", counterPtot);\n    \n    //update total counters\n    var sum = parseInt(values[0].substring(1)) + parseInt(values[1].substring(1)) + parseInt(values[2].substring(1));\n    counterDay += sum;\n    counterTot += sum;\n    global.set(\"counterTot\", counterTot);\n    global.set(\"counterDay\", counterDay);\n}\nelse{ //handle heartbeat\n    heartbeat = new Date().toUTCString();\n    //var heartbeat_str = heartbeat.toString();\n    global.set(\"heartbeat\", heartbeat);\n}\n//update global variables\nmsg.payload = {\n    counterS: counterS.toString(),\n    counterM: counterM.toString(),\n    counterP: counterP.toString(),\n    counterStot: counterStot.toString(),\n    counterMtot: counterMtot.toString(),\n    counterPtot: counterPtot.toString(),\n    counterDay: counterDay.toString(),\n    counterTot: counterTot.toString(),\n    heartbeat: heartbeat\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 160,
+        "wires": [
+            [
+                "01a0df8a37528cec",
+                "50e73cf1a28f1fa8",
+                "6080b6ea9239b77b",
+                "f1a47db8afb99907",
+                "391259ef7eaf246f",
+                "1d1019f857b28a7e",
+                "7460c5816321732a",
+                "25ab709fd949cc47",
+                "6c425ea0fbce4cb9",
+                "dc6f171ef9dda829",
+                "72736a98193a5156",
+                "3e04bab5a1d9c730"
+            ]
+        ],
+        "info": "function to process data and add values to correct counter objects"
+    },
+    {
+        "id": "01a0df8a37528cec",
+        "type": "debug",
+        "z": "56bf86fa1e00f568",
+        "name": "read counters",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "1cb301aad43cf0d4",
+        "type": "inject",
+        "z": "56bf86fa1e00f568",
+        "name": "manual mqtt data",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "S1,M1,P0",
+        "payloadType": "str",
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "64c5148669c67edc"
+            ]
+        ]
+    },
+    {
+        "id": "f1a47db8afb99907",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "small boats",
+        "format": "{{msg.payload.counterS}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 910,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "391259ef7eaf246f",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "medium boats",
+        "format": "{{msg.payload.counterM}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "1d1019f857b28a7e",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "paddle boats",
+        "format": "{{msg.payload.counterP}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 910,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "7460c5816321732a",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "DAILY TOTAL",
+        "format": "{{msg.payload.counterDay}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "25",
+        "color": "#000000",
+        "x": 920,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "72736a98193a5156",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "SUMMER TOTAL",
+        "format": "{{msg.payload.counterTot}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "25",
+        "color": "#000000",
+        "x": 930,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "25ab709fd949cc47",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "total small boats",
+        "format": "{{msg.payload.counterStot}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "6c425ea0fbce4cb9",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "total medium boats",
+        "format": "{{msg.payload.counterMtot}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "dc6f171ef9dda829",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "total paddle boats",
+        "format": "{{msg.payload.counterPtot}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0f6631b0617d0e55",
+        "type": "ui_chart",
+        "z": "56bf86fa1e00f568",
+        "name": "chart summer boat per type",
+        "group": "9bd7c73e0058dabf",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "label": "total overview total boats per type",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "waiting for boats!",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 960,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50e73cf1a28f1fa8",
+        "type": "function",
+        "z": "56bf86fa1e00f568",
+        "name": "get total counters",
+        "func": "//get global vars\nvar counterStot = global.get(\"counterStot\");\nvar counterMtot = global.get(\"counterMtot\");\nvar counterPtot = global.get(\"counterPtot\");\n\nvar m={\n    \"series\":[\"small boats\",\"medium boats\",\"paddle boats\"],\n    \"data\":[[counterStot],[counterMtot],[counterPtot]],\n    \"labels\":[\"total summer\"]\n};\nreturn {payload:[m]};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 660,
+        "wires": [
+            [
+                "0f6631b0617d0e55"
+            ]
+        ]
+    },
+    {
+        "id": "b46881e416ef9bc9",
+        "type": "ui_chart",
+        "z": "56bf86fa1e00f568",
+        "name": "chart daily boat per type",
+        "group": "9bd7c73e0058dabf",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "daily overview boats per type",
+        "chartType": "bar",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "waiting for boats!",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6080b6ea9239b77b",
+        "type": "function",
+        "z": "56bf86fa1e00f568",
+        "name": "get daily counters",
+        "func": "//get global vars\nvar counterS = global.get(\"counterS\");\nvar counterM = global.get(\"counterM\");\nvar counterP = global.get(\"counterP\");\n\nvar m={\n    \"series\":[\"small boats\",\"medium boats\",\"paddle boats\"],\n    \"data\":[[counterS],[counterM],[counterP]],\n    \"labels\":[\"total today\"]\n};\nreturn {payload:[m]};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "b46881e416ef9bc9"
+            ]
+        ]
+    },
+    {
+        "id": "3e04bab5a1d9c730",
+        "type": "ui_text",
+        "z": "56bf86fa1e00f568",
+        "group": "9bd7c73e0058dabf",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "last status update",
+        "format": "{{msg.payload.heartbeat}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 930,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "258b53c2265981b5",
+        "type": "inject",
+        "z": "56bf86fa1e00f568",
+        "name": "manual mqtt heartbeat",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "00",
+        "payloadType": "str",
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "64c5148669c67edc"
+            ]
+        ]
+    },
+    {
+        "id": "7ae055af32130327",
+        "type": "comment",
+        "z": "56bf86fa1e00f568",
+        "name": "simulated MQTT messages, for testing",
+        "info": "",
+        "x": 150,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "258a53e198e04f29",
+        "type": "comment",
+        "z": "56bf86fa1e00f568",
+        "name": "MQTT in",
+        "info": "Raw MQTT is in hexadecimal (because of LoRaWAN messaging).",
+        "x": 80,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "c890e7eed3218128",
+        "type": "function",
+        "z": "0a502c0890c0a815",
+        "name": "create global variables",
+        "func": "global.set(\"counterS\", 0);\nglobal.set(\"counterM\", 0);\nglobal.set(\"counterP\", 0);\n\nglobal.set(\"counterStot\", 0);\nglobal.set(\"counterMtot\", 0);\nglobal.set(\"counterPtot\", 0);\n\nglobal.set(\"counterDay\", 0);\nglobal.set(\"counterTot\", 0);\n\n\nglobal.set(\"heartbeat\", \"\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "32fdf9e8e2a5f810",
+        "type": "inject",
+        "z": "0a502c0890c0a815",
+        "name": "create global variables",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            [
+                "c890e7eed3218128"
+            ]
+        ]
+    },
+    {
+        "id": "2be4eaf180aec5a0",
+        "type": "comment",
+        "z": "0a502c0890c0a815",
+        "name": "create global variables",
+        "info": "For easy integration in multiple nodes, the variables are made globally accessable.\nThis node will run exactly once, right after deployment.\nIt should **NOT** be touched afterwards, as reinitializing the counter objects will result in **PERMANENT DATA LOSS**.",
+        "x": 120,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3fd7eaf3a8e2d6f5",
+        "type": "inject",
+        "z": "d5259560518e1874",
+        "name": "midnight loop trigger",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "343f81cba9974f7a"
+            ]
+        ]
+    },
+    {
+        "id": "343f81cba9974f7a",
+        "type": "function",
+        "z": "d5259560518e1874",
+        "name": "reset daily counters",
+        "func": "global.set(\"counterS\", 0);\nglobal.set(\"counterM\", 0);\nglobal.set(\"counterP\", 0);\nglobal.set(\"counterDay\", 0);\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3a2b256c5c65247",
+        "type": "comment",
+        "z": "d5259560518e1874",
+        "name": "reset daily totals every day at midnight",
+        "info": "This button resets the daily counters at midnight of every day.\nThis ensures correct working of the dashboard.",
+        "x": 170,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ebe85b0fe10f9910",
+        "type": "inject",
+        "z": "d5259560518e1874",
+        "name": "reset button",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "155db64b4555ead1"
+            ]
+        ]
+    },
+    {
+        "id": "155db64b4555ead1",
+        "type": "function",
+        "z": "d5259560518e1874",
+        "name": "reset all counters",
+        "func": "global.set(\"counterS\", 0);\nglobal.set(\"counterM\", 0);\nglobal.set(\"counterP\", 0);\nglobal.set(\"counterDay\", 0);\nglobal.set(\"counterStot\", 0);\nglobal.set(\"counterMtot\", 0);\nglobal.set(\"counterPtot\", 0);\nglobal.set(\"counterTot\", 0);\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "301b4f4bd34dccdb",
+        "type": "comment",
+        "z": "d5259560518e1874",
+        "name": "reset all counters",
+        "info": "This button resets all counters.\nIt should **NOT** be touched, as resetting the counter objects will result in **PERMANENT DATA LOSS**.",
+        "x": 100,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f79c29b7.055068",
+        "type": "comment",
+        "z": "bc755da1433332fd",
+        "name": "Auto Logger",
+        "info": "This trigger goes off every day at 23:30.\nThis stores the current counters values in a csv file, for future use.",
+        "x": 90,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4c8ae605.33be88",
+        "type": "function",
+        "z": "bc755da1433332fd",
+        "name": "Set data",
+        "func": "//get global vars\nvar counterS = global.get(\"counterS\");\nvar counterM = global.get(\"counterM\");\nvar counterP = global.get(\"counterP\");\nvar counterStot = global.get(\"counterStot\");\nvar counterMtot = global.get(\"counterMtot\");\nvar counterPtot = global.get(\"counterPtot\");\nvar counterTot = global.get(\"counterTot\");\nvar counterDay = global.get(\"counterDay\");\n\n//get current timestamp\nvar now = new Date();\nmsg.payload = {\n    \"timestamp\" : now.getTime(),\n    \"daily small_boat\" : counterS,\n    \"daily medium_boat\" : counterM,\n    \"daily paddle_boat\" : counterP,\n    \"daily total\" : counterDay,\n    \"total small_boat\" : counterStot,\n    \"total medium_boat\" : counterMtot,\n    \"total paddle_boat\" : counterPtot,\n    \"total summer\" : counterTot   \n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 180,
+        "wires": [
+            [
+                "f46f569e.ff1a08"
+            ]
+        ]
+    },
+    {
+        "id": "f46f569e.ff1a08",
+        "type": "function",
+        "z": "bc755da1433332fd",
+        "name": "Filename generator",
+        "func": "// Get the current time and convert it to text\nvar now = new Date();\nvar yyyy = now.getFullYear();\nvar mm = now.getMonth() < 9 ? \"0\" + (now.getMonth() + 1) : (now.getMonth() + 1); // getMonth() is zero-based\nvar dd  = now.getDate() < 10 ? \"0\" + now.getDate() : now.getDate();\nvar hh = now.getHours() < 10 ? \"0\" + now.getHours() : now.getHours();\nvar mmm  = now.getMinutes() < 10 ? \"0\" + now.getMinutes() : now.getMinutes();\nvar ss  = now.getSeconds() < 10 ? \"0\" + now.getSeconds() : now.getSeconds();\n\n// Generate out file name pattern\nmsg.fname = \"boatdata\"+ yyyy + mm + dd + \".csv\";\n// Full filename with path for the file node later\nmsg.filename = \"/home/admin/datalog/\"+ msg.fname;\n\n// We save the current payload into a different place on the msg object\nmsg.filecontent = msg.payload;\n\n// We are passing the file name search pattern to fs node to tell us if the file exists or not\nmsg.payload = {\"pattern\":msg.fname};\n\nnode.status({fill:\"blue\",shape:\"ring\",text:msg.fname});\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "fa6936f.7758dc8"
+            ]
+        ]
+    },
+    {
+        "id": "a96494a5.b0f4c8",
+        "type": "debug",
+        "z": "bc755da1433332fd",
+        "name": "show log filename",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fe6f74d5.674ec8",
+        "type": "csv",
+        "z": "bc755da1433332fd",
+        "name": "",
+        "sep": ",",
+        "hdrin": false,
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "timestamp,daily small_boat,daily medium_boat,daily paddle_boat, daily total,total small_boat,total medium_boat,total paddle_boat,total summer",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 950,
+        "y": 180,
+        "wires": [
+            [
+                "3a8ebdf3.772cc2"
+            ]
+        ]
+    },
+    {
+        "id": "3a8ebdf3.772cc2",
+        "type": "file",
+        "z": "bc755da1433332fd",
+        "name": "",
+        "filename": "",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1080,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3cb887e8.e533a8",
+        "type": "change",
+        "z": "bc755da1433332fd",
+        "name": "Get file content",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "filecontent",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 180,
+        "wires": [
+            [
+                "fe6f74d5.674ec8"
+            ]
+        ]
+    },
+    {
+        "id": "fa6936f.7758dc8",
+        "type": "fs-file-lister",
+        "z": "bc755da1433332fd",
+        "name": "",
+        "start": "/home/pi/datalog/",
+        "pattern": "",
+        "folders": "*",
+        "hidden": true,
+        "lstype": "files",
+        "path": true,
+        "single": true,
+        "depth": 0,
+        "stat": true,
+        "showWarnings": false,
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "a96494a5.b0f4c8",
+                "3cb887e8.e533a8"
+            ]
+        ]
+    },
+    {
+        "id": "d177271d13e3b7e5",
+        "type": "inject",
+        "z": "bc755da1433332fd",
+        "name": "daily log loop",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "4c8ae605.33be88"
+            ]
+        ]
+    }
+]
