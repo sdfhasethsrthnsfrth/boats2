@@ -41,6 +41,7 @@ while True:
         if boxes.cls.size > 0: #check boxes.cls.size for detections
             #frame_ = results[0].plot() #load annotated picture (with bounding boxes, class names and confidence scores)
             #cv2.imshow('frame', frame_) #show annotated picture
+            raw_frame = cv2.imwrite("/home/Captain/Pictures/{folder}/frame_{counter}.jpg".format(folder=random_folder,counter = counter), frame) #if external drive is connected: /media/Captain/boat_exfat/{folder}/{counter}
             pic = camera.switch_mode_and_capture_file(pic_config,"/home/Captain/Pictures/{folder}/{counter}.jpg".format(folder=random_folder,counter = counter)) #if external drive is connected: /media/Captain/boat_exfat/{folder}/{counter}
             counter += 1
             class_ids = boxes.cls.astype(int) #copy the boxes.cls to the class_ids array
