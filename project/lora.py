@@ -144,6 +144,7 @@ send_command("CSAVE")
 print(wait_response(ser, 1))
 #this should return: "OK"
 
+""" code for testing
 #send a testframe of data
 send_command("DTRX=0,0,10,0123456789")
 print(wait_response(ser, 1))
@@ -156,3 +157,4 @@ print(wait_response(ser, 1))
 send_command("DRX?")
 print(wait_response(ser, 1))
 ser.close()
+"""
