@@ -7,9 +7,14 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 ## Getting Started
 
 ### Dependencies
-This project relies on Python libraries: YOLO, opencv.
-Other Python libraries should already be installed: picamera2, serial, os, time
-OS: Raspberry Pi (x64 Bookworm)
+<ul>
+   <li>This project relies on Python libraries: YOLO, opencv.</li>
+   <li>Other Python libraries should already be installed: picamera2, serial, os, time</li>
+<li>OS: Raspberry Pi (x64 Bookworm)</li></ul>
+
+
+
+
 
 ### Installing
 
