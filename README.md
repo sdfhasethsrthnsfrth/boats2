@@ -15,7 +15,7 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 
 
-### Installing
+### Installing and running code
 
 * Download all the code.
 * Make all the files in the folder executable and modifiable by all users:
@@ -23,9 +23,9 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
   sudo chmod +777 /path/to/project/directory/*
   ```
 * Make sure your hardrive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
-* create a systemd service for the main.py file:
+* create a systemd service for the main.py file (in this case it is called boats.service):
 ```
-sudo nano etc/systemd/system/name_of_service.service
+sudo nano etc/systemd/system/boats.service
 ```
 ```
 [Unit]
@@ -54,23 +54,40 @@ crontab -e
 ```
 */15 * * * * python3 path/to/heartbeat.py
 ```
+* as a final step: make sure the camera is connected to the Pi (only connect the camera when the Pi is off!).
+* executing following command will try to initialize the camera:
+```
+libcamera-hello
+```
 
 
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* The program will run automatically on boot. You can check the status of the systemd service with following command:
 ```
-code blocks for commands
+sudo systemctl satus boats.service
 ```
 
-## Help
+## What about maintenance?
 
-Any advise for common problems or issues.
+* As a best practice, first stop the systemd service from running. This will properly close the code:
 ```
-command to run if program contains helper info
+sudo systemctl stop boats.service
 ```
+* Next, reload the systemd daemon, to make sure the stop went through:
+```
+sudo systemctl daemon-reload
+```
+* Now you can do any maintenance you like
+* After maintenance, don't forget to restart the service again:
+  ```
+  sudo systemctl start boats.service
+  ```
+* And to make sure the start went through, reload the systemd daemon again:
+  ```
+  sudo systemctl daemon-reload
+  ```
 
 ## Authors
 Toon Van Havermaet  
@@ -82,12 +99,3 @@ Toon Van Havermaet
 ## License
 
 This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
