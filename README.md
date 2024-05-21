@@ -23,9 +23,25 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
   sudo chmod +777 /path/to/project/directory/*
   ```
 * Make sure your hardrive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
-* create a systemd service for the main.py file.
+* create a systemd service for the main.py file:
 ```
 sudo nano etc/systemd/system/name_of_service.service
+```
+```
+[Unit]
+Description=start monitoring boats
+Afer=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/Captain/project/main.py
+Restart=on-failure
+RestartSec=60s
+StartLimitInterval=180s
+StartLimitBurst=3
+
+[Install]
+WantedBy=multi-user.target
 ```
   This is what it should look like: <br> ![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/d764a18b-9930-44d1-aa18-066055a2ccf0)
 * open crontab with the following command:
