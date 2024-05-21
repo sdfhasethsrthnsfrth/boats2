@@ -7,10 +7,9 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 ## Getting Started
 
 ### Dependencies
-<ul>
-   <li>This project relies on Python libraries: YOLO, opencv.</li>
-   <li>Other Python libraries should already be installed: picamera2, serial, os, time</li>
-<li>OS: Raspberry Pi (x64 Bookworm)</li></ul>
+*This project relies on Python libraries: YOLO, opencv
+*Other Python libraries should already be installed: picamera2, serial, os, time
+*OS: Raspberry Pi (x64 Bookworm)
 
 
 
@@ -18,8 +17,8 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Download all the code
+* Make sure your hardrive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
 
 ### Executing program
 
@@ -37,17 +36,9 @@ command to run if program contains helper info
 ```
 
 ## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+Toon Van Havermaet  
 
 ## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
 * 0.1
     * Initial Release
 
