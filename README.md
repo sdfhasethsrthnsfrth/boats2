@@ -7,17 +7,27 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 ## Getting Started
 
 ### Dependencies
-* This project relies on Python libraries: YOLO, opencv
-* Other Python libraries should already be installed: picamera2, serial, os, time
+* Python library: ultralytics
+* Other Python libraries should already be pre-installed: cv2, picamera2, serial, os, time
 * OS: Raspberry Pi (x64 Bookworm)
 
 
-
+### Hardware
+* make sure the serial port of your Pi is enabled:
+  ```
+  sudo raspi-config
+  ```
+* in the GUI tool, select `interfaces` and then `serial port`: <br>
+  ![raspi-interface](https://github.com/Bonsa-BE/boats/assets/68948638/22c44a3f-e608-4afb-a748-5ccbf180475e)
+* reboot for the changes to take effect:
+  ```
+  sudo reboot
+  ```
 
 
 ### Installing and running code
 
-* Download all the code.
+* Download all the code files from the project folder in this repository.
 * Make all the files in the folder executable and modifiable by all users:
   ```
   sudo chmod +777 /path/to/project/directory/*
