@@ -36,7 +36,7 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
   ```
   sudo chmod +777 /path/to/project/directory/*
   ```
-* Make sure your hardrive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
+* Make sure your hard drive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
 * create a systemd service for the main.py file (in this case it is called boats.service):
   ```
   sudo nano etc/systemd/system/boats.service
@@ -104,7 +104,9 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
   ```
   sudo systemctl status boats.service
   ```
-  
+### System Diagram
+![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/c026393c-a230-4289-9dff-5b582763607e)
+
 ## Authors
 Toon Van Havermaet  
 
