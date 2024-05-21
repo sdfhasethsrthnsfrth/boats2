@@ -27,7 +27,7 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 ```
 sudo nano etc/systemd/system/name_of_service.service
 ```
-  This is what it should look like: ![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/d764a18b-9930-44d1-aa18-066055a2ccf0)
+  This is what it should look like: <br> ![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/d764a18b-9930-44d1-aa18-066055a2ccf0)
 * to make the heartbeat.py a cronjob, add the following to your  
 
 
