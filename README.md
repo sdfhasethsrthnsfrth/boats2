@@ -17,8 +17,8 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 ### Hardware
 * Raspberry Pi 4B
-* Raspberry Pi HQ camera module
-* 16mm telephoto lens
+* Raspberry Pi HQ camera module (C-CS mount)
+* C-mount 16mm telephoto lens
 * M5Stack 868 LoRaWAN module
 
 ### Preparation
