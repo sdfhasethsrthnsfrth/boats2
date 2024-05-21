@@ -24,10 +24,10 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
   ```
 * Make sure your hardrive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
 * create a systemd service for the main.py file (in this case it is called boats.service):
-```
-sudo nano etc/systemd/system/boats.service
-```
-```
+  ```
+  sudo nano etc/systemd/system/boats.service
+  ```
+  ```
 [Unit]
 Description=start monitoring boats
 Afer=multi-user.target
@@ -42,23 +42,21 @@ StartLimitBurst=3
 
 [Install]
 WantedBy=multi-user.target
-```
-  This is what it should look like: <br> ![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/d764a18b-9930-44d1-aa18-066055a2ccf0)
+  ```
+  This is what it should look like: <br>  ![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/d764a18b-9930-44d1-aa18-066055a2ccf0)
 * open crontab with the following command:
-```
+  ```
 crontab -e
-```
+  ```
 * to make the heartbeat.py a cronjob, add the following to your crontab:
-
-
-```
+  ```
 */15 * * * * python3 path/to/heartbeat.py
-```
-* as a final step: make sure the camera is connected to the Pi (only connect the camera when the Pi is off!).
+  ```
+* as a final step: make sure the camera is connected to the Pi (__only connect the camera when the Pi is off!__).
 * executing following command will try to initialize the camera:
-```
+  ```
 libcamera-hello
-```
+  ```
 
 
 
