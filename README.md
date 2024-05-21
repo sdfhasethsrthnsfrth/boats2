@@ -17,8 +17,13 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 ### Installing
 
-* Download all the code
+* Download all the code.
+* Make all the files in the folder executable and modifiable by all users:
+  ```
+  sudo chmod +777 /path/to/project/directory/*
+  ```
 * Make sure your hardrive mounts automatically. A tutorial can be found [here](https://www.digikey.fi/fi/maker/tutorials/2022/how-to-connect-a-drive-hddssd-to-a-raspberry-pi-or-other-linux-computers).
+* create a systemd service for the main 
 
 ### Executing program
 
