@@ -8,6 +8,9 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 ### Dependencies
 * Python library: ultralytics
+  ```
+  pip install ultralytics
+  ```
 * Other Python libraries should already be pre-installed: cv2, picamera2, serial, os, time
 * OS: Raspberry Pi (x64 Bookworm)
 
