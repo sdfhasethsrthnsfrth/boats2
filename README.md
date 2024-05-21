@@ -13,21 +13,25 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 
 ### Hardware
+* Raspberry Pi 4B
+* Raspberry Pi HQ camera module
+* 16mm telephoto lens
+* M5Stack 868 LoRaWAN module
+
+### Preparation
 * make sure the serial port of your Pi is enabled:
   ```
   sudo raspi-config
   ```
 * in the GUI tool, select `interfaces` and then `serial port`: <br>
   ![raspi-interface](https://github.com/Bonsa-BE/boats/assets/68948638/22c44a3f-e608-4afb-a748-5ccbf180475e)
+  
 * reboot for the changes to take effect:
   ```
   sudo reboot
   ```
-
-
-### Installing and running code
-
 * Download all the code files from the project folder in this repository.
+  
 * Make all the files in the folder executable and modifiable by all users:
   ```
   sudo chmod +777 /path/to/project/directory/*
@@ -71,8 +75,7 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 
 
-### Executing program
-
+### Running program
 * The program will run automatically on boot. You can check the status of the systemd service with following command:
   ```
   sudo systemctl satus boats.service
