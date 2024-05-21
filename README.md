@@ -87,7 +87,11 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
   ```
   sudo systemctl daemon-reload
   ```
-
+* Whenever you're not sure whether the service is running or not, you can always check its status with following command:
+  ```
+  sudo systemctl status boats.service
+  ```
+  
 ## Authors
 Toon Van Havermaet  
 
