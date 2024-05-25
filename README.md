@@ -20,6 +20,29 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 * Raspberry Pi HQ camera module (C-CS mount)
 * C-mount 16mm telephoto lens
 * M5Stack 868 LoRaWAN module
+* WD Elements 1TB HDD
+
+### Credentials
+* Pi for MV code:
+  ```
+  device name: boatvision
+  username: Captain
+  pw: Captain123
+  ```
+* Pi for Node-RED:
+  ```
+  device name: boatmonitor
+  username: admin
+  pw: Admin123
+  ```
+* Node-RED accounts:
+  ```
+  username: admin
+  pw: Admin123
+
+  username: viewer
+  pw: Viewer123
+  ```
 
 ### Preparation
 * make sure the serial port of your Pi is enabled:
