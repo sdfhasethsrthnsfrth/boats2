@@ -8,7 +8,7 @@ from random_folder_generator import *
 
 #create random folder
 random_folder = get_random_bytes(4)  # Get 4 random bytes
-create_directory("/home/Captain/Pictures", random_folder) #make folder on external drive: media/Captain/boat_exfat
+create_directory("/mnt/hd1", random_folder) 
 
 counter = 0 #simple counter for storing images
 
@@ -27,7 +27,7 @@ model=YOLO("/home/Captain/project/best_cross_val.pt")
 def count_values(arr):
     counts = np.bincount(arr, None, 4) #np bincount is the most efficient counter in Python
     form_str = "S{},M{},P{}".format(counts[1], counts[2], counts[3]) #string formatting for easy data extraction 
-    return form_str                         
+    return form_str
 
 #main event loop
 while True:
@@ -41,15 +41,15 @@ while True:
         if boxes.cls.size > 0: #check boxes.cls.size for detections
             #frame_ = results[0].plot() #load annotated picture (with bounding boxes, class names and confidence scores)
             #cv2.imshow('frame', frame_) #show annotated picture
-            raw_frame = cv2.imwrite("/home/Captain/Pictures/{folder}/frame_{counter}.jpg".format(folder=random_folder,counter = counter), frame) #if external drive is connected: /media/Captain/boat_exfat/{folder}/{counter}
-            pic = camera.switch_mode_and_capture_file(pic_config,"/home/Captain/Pictures/{folder}/{counter}.jpg".format(folder=random_folder,counter = counter)) #if external drive is connected: /media/Captain/boat_exfat/{folder}/{counter}
+            raw_frame = cv2.imwrite("/mnt/hd1/{folder}/frame_{counter}.jpg".format(folder=random_folder,counter = counter), frame)
+            pic = camera.switch_mode_and_capture_file(pic_config,"/mnt/hd1/{folder}/{counter}.jpg".format(folder=random_folder,counter = counter))
             counter += 1
             class_ids = boxes.cls.astype(int) #copy the boxes.cls to the class_ids array
             print(count_values(class_ids)) #check message that will be sent over LoRaWAN
             ser = open_serial()
             send_message(ser, 0, 0, count_values(class_ids))
             print(wait_response(ser, 1))
-            time.sleep(15) #pause the entire loop for 15s
+            time.sleep(10) #pause the entire loop for 10s
         continue
 
     if cv2.waitKey(1) & 0xFF==ord('q'):
