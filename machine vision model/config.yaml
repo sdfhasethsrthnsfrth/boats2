@@ -1,0 +1,15 @@
+path: C:\Users\VLK_DEV\Documents\BoatVisualization\MachineVisionModel\MachineVisionModel\data #Dataset root directory
+train: images\train #Images used for training (Relative to path)
+val: images\val #Used to evaluate model in progress (Relative to path, can be same data as images used for training)
+test: images\test #Used to test model after its completion
+nc: 6
+
+#Classes
+
+names: ['Jetski','Kayak','Large boat','Person','Small boat','Boat']
+#0: Jetski
+#1: Kayak
+#2: Medium boat #Should be renamed to large boat
+#3: Person
+#4: Small boat
+#5: Boat Not used in labelling, remnant of previous attempt. 
