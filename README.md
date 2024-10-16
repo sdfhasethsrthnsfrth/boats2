@@ -1,5 +1,5 @@
-# Machine Vision in a Marine Environment
-Mapping boat traffic in Valkeakoski
+# Expanding a machine vision project
+An upgraded system for mapping boat traffic in Valkeakoski
 ## Description
 Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspberry Pi and Node-RED. 
 
@@ -134,11 +134,14 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 ![afbeelding](https://github.com/Bonsa-BE/boats/assets/68948638/c026393c-a230-4289-9dff-5b582763607e)
 
 ## Authors
-Toon Van Havermaet  
+Toon Van Havermaet 
+Simon Vernaeve
 
 ## Version History
 * 0.1
-    * Initial Release
+    * Initial Release (created by Toon Van Havermaet)
+* 0.2
+    * Updated model & Hardware (created by Simon Vernaeve
 
 ## License
 
