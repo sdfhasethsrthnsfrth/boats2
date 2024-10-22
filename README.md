@@ -135,13 +135,14 @@ Thesis project involving Machine Vision with YOLO architecture, LoRaWAN, Raspber
 
 ## Authors
 Toon Van Havermaet 
+
 Simon Vernaeve
 
 ## Version History
 * 0.1
     * Initial Release (created by Toon Van Havermaet)
 * 0.2
-    * Updated model & Hardware (created by Simon Vernaeve
+    * Updated model & Hardware (created by Simon Vernaeve)
 
 ## License
 
